@@ -49,15 +49,15 @@ sketch::sketch(int r, int c)
     A = new int[row];
     B = new int[row];
 
-	for (int i = 0; i < row; ++i)
-	{
-		for (int j = 0; j < col; ++j)
-		{
-			matrix[i][j] = 0;
-		}
-		A[i] = rand();
-		B[i] = rand(); 
-	}
+    for (int i = 0; i < row; ++i)
+    {
+        for (int j = 0; j < col; ++j)
+        {
+            matrix[i][j] = 0;
+        }
+        A[i] = rand();
+        B[i] = rand(); 
+    }
 }
 
 sketch::~sketch()
@@ -100,28 +100,28 @@ int sketch::remove(int key, int amount)
 
 int sketch::frequency(int key)
 {
-	int minf=LARGE;
+    int minf=LARGE;
 
-	for (int i = 0; i < row; ++i)
-	{
-		int f = matrix[i][hash(key,i)];
-		if(f<minf)
-		{
-			minf = f;
-		}
-	}
-	return minf;
+    for (int i = 0; i < row; ++i)
+    {
+        int f = matrix[i][hash(key,i)];
+        if(f<minf)
+        {
+            minf = f;
+        }
+    }
+    return minf;
 }
 
 int sketch::hash(int k, int i)
 {
-	int a = A[i];
-	int b = B[i];
+    int a = A[i];
+    int b = B[i];
 
-	int result = a*k + b;
-	result = ((result >> HL) + result) & MOD;
-	
-	return (int)(result%col);
+    int result = a*k + b;
+    result = ((result >> HL) + result) & MOD;
+    
+    return (int)(result%col);
 }
 
 void sketch::normalize()
@@ -143,14 +143,14 @@ void sketch::normalize()
 
 void sketch::print()
 {
-	for (int i = 0; i < row; ++i)
-	{
-		cout << "|";
-		for (int j = 0; j < col; ++j)
-		{
-			cout << setw(4) << matrix[i][j] << " | ";
-		}
-		cout << endl;
-	}
+    for (int i = 0; i < row; ++i)
+    {
+        cout << "|";
+        for (int j = 0; j < col; ++j)
+        {
+            cout << setw(4) << matrix[i][j] << " | ";
+        }
+        cout << endl;
+    }
 }
 
