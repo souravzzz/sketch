@@ -1,6 +1,7 @@
 #include "sketch.h"
 #include <iostream>
 #include <iomanip>
+#include <cstdlib>
 
 #define ROW 7
 #define COL 2000
@@ -11,15 +12,9 @@
 
 sketch::sketch(int r, int c) 
 {
-    if(r<=0)
-        row = ROW;
-    else
-        row = r;
-
-    if(c<=0)
-        col = COL;
-    else
-        col = c;
+    srand (time(NULL)); 
+    row = r>1 ? r : ROW; 
+    col = c>1 ? c : COL; 
 
     matrix = new int* [row];
     for(int i=0; i<row; i++)
@@ -51,7 +46,7 @@ sketch::~sketch()
 
 int sketch::insert(int key, int amount)
 {
-    if(amount <= 0)
+    if(amount < 1)
         return -1;
 
     for(int i=0; i<row; i++)
@@ -65,7 +60,7 @@ int sketch::insert(int key, int amount)
 
 int sketch::remove(int key, int amount)
 {
-    if(amount <= 0)
+    if(amount < 1)
         return -1;
 
     for(int i=0; i<row; i++)

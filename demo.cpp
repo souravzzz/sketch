@@ -1,13 +1,11 @@
 #include <iostream>
 #include <iomanip>
-#include <cstdlib>
 #include "sketch.h"
 
 int main(int argc, char const *argv[])
 {
     int row=8, col=4096, mult=1000;
 
-    srand (time(NULL));
     sketch s(row,col);
     int i, f, r, c=0, d=0;
 
