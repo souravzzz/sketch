@@ -1,4 +1,5 @@
-#include "sketch.cpp"
+#include <iostream>
+#include "sketch.h"
 
 int main(int argc, char const *argv[])
 {
@@ -8,11 +9,11 @@ int main(int argc, char const *argv[])
 
     do
     {
-        cout << "item >>" ;
-        cin >> i;
+        std::cout << "item >>" ;
+        std::cin >> i;
         s.insert(i);
         f = s.frequency(i);
-        cout << "freq >>" << f << endl;
+        std::cout << "freq >>" << f << std::endl;
         s.print();
     } while (i>0);
 }

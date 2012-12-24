@@ -1,3 +1,4 @@
+#include "sketch.h"
 #include <iostream>
 #include <iomanip>
 #include <vector>
@@ -11,24 +12,6 @@
 #define HL 31
 
 using namespace std;
-
-class sketch
-{
-public:
-    sketch(int r, int c);
-    ~sketch();
-    int insert(int key, int amount=1);
-    int remove(int key, int amount=1);
-    int frequency(int);
-    void normalize();
-    void print();
-
-private:
-    int row, col;
-    int **matrix;
-    int *A, *B;
-    int hash(int key, int i);
-};
 
 sketch::sketch(int r, int c) 
 {

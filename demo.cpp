@@ -1,7 +1,7 @@
 #include <iostream>
 #include <iomanip>
 #include <cstdlib>
-#include "sketch.cpp"
+#include "sketch.h"
 
 int main(int argc, char const *argv[])
 {
@@ -11,7 +11,7 @@ int main(int argc, char const *argv[])
     sketch s(row,col);
     int i, f, r, c=0, d=0;
 
-    cout << "MEMORY USED: " << row*col*sizeof(int)/1024 << "KB" << endl;
+    std::cout << "MEMORY USED: " << row*col*sizeof(int)/1024 << "KB" << std::endl;
 
     for (i = 0; i < mult*1000; ++i)
     {
@@ -80,27 +80,27 @@ int main(int argc, char const *argv[])
 
     s.normalize();
 
-    cout << "TOTAL INSERTS: " << c+d << endl;
-    cout << "--------" << "--------" << "--------" << endl;
-    cout << "ITEM#   " << "EXPECTED" << "  ACTUAL" << endl;
-    cout << "--------" << "--------" << "--------" << endl;
-    cout << "987654  " <<setw(8) << mult*1000 << setw(8) << s.frequency(987654)  << endl;
-    cout << "1111    " <<setw(8) << mult*100  << setw(8) << s.frequency(1111)    << endl;
-    cout << "2222    " <<setw(8) << mult*100  << setw(8) << s.frequency(2222)    << endl;
-    cout << "3333    " <<setw(8) << mult*100  << setw(8) << s.frequency(3333)    << endl;
-    cout << "4444    " <<setw(8) << mult*100  << setw(8) << s.frequency(4444)    << endl;
-    cout << "999     " <<setw(8) << mult*50   << setw(8) << s.frequency(999)     << endl;
-    cout << "999999  " <<setw(8) << mult*50   << setw(8) << s.frequency(999999)  << endl;
-    cout << "10      " <<setw(8) << mult*10   << setw(8) << s.frequency(10)      << endl;
-    cout << "100     " <<setw(8) << mult*10   << setw(8) << s.frequency(100)     << endl;
-    cout << "1000    " <<setw(8) << mult*10   << setw(8) << s.frequency(1000)    << endl;
-    cout << "10000   " <<setw(8) << mult*10   << setw(8) << s.frequency(10000)   << endl;
-    cout << "100000  " <<setw(8) << mult*10   << setw(8) << s.frequency(100000)  << endl;
-    cout << "1000000 " <<setw(8) << mult*10   << setw(8) << s.frequency(1000000) << endl;
-    cout << "12345   " <<setw(8) << mult      << setw(8) << s.frequency(12345)   << endl;
-    cout << "23456   " <<setw(8) << mult      << setw(8) << s.frequency(23456)   << endl;
-    cout << "34567   " <<setw(8) << mult      << setw(8) << s.frequency(34567)   << endl;
-    cout << "RANDOM  " <<setw(8) << d <<endl<<endl;
+    std::cout << "TOTAL INSERTS: " << c+d << std::endl;
+    std::cout << "--------" << "--------" << "--------" << std::endl;
+    std::cout << "ITEM#   " << "EXPECTED" << "  ACTUAL" << std::endl;
+    std::cout << "--------" << "--------" << "--------" << std::endl;
+    std::cout << "987654  " <<std::setw(8) << mult*1000 << std::setw(8) << s.frequency(987654)  << std::endl;
+    std::cout << "1111    " <<std::setw(8) << mult*100  << std::setw(8) << s.frequency(1111)    << std::endl;
+    std::cout << "2222    " <<std::setw(8) << mult*100  << std::setw(8) << s.frequency(2222)    << std::endl;
+    std::cout << "3333    " <<std::setw(8) << mult*100  << std::setw(8) << s.frequency(3333)    << std::endl;
+    std::cout << "4444    " <<std::setw(8) << mult*100  << std::setw(8) << s.frequency(4444)    << std::endl;
+    std::cout << "999     " <<std::setw(8) << mult*50   << std::setw(8) << s.frequency(999)     << std::endl;
+    std::cout << "999999  " <<std::setw(8) << mult*50   << std::setw(8) << s.frequency(999999)  << std::endl;
+    std::cout << "10      " <<std::setw(8) << mult*10   << std::setw(8) << s.frequency(10)      << std::endl;
+    std::cout << "100     " <<std::setw(8) << mult*10   << std::setw(8) << s.frequency(100)     << std::endl;
+    std::cout << "1000    " <<std::setw(8) << mult*10   << std::setw(8) << s.frequency(1000)    << std::endl;
+    std::cout << "10000   " <<std::setw(8) << mult*10   << std::setw(8) << s.frequency(10000)   << std::endl;
+    std::cout << "100000  " <<std::setw(8) << mult*10   << std::setw(8) << s.frequency(100000)  << std::endl;
+    std::cout << "1000000 " <<std::setw(8) << mult*10   << std::setw(8) << s.frequency(1000000) << std::endl;
+    std::cout << "12345   " <<std::setw(8) << mult      << std::setw(8) << s.frequency(12345)   << std::endl;
+    std::cout << "23456   " <<std::setw(8) << mult      << std::setw(8) << s.frequency(23456)   << std::endl;
+    std::cout << "34567   " <<std::setw(8) << mult      << std::setw(8) << s.frequency(34567)   << std::endl;
+    std::cout << "RANDOM  " <<std::setw(8) << d <<std::endl<<std::endl;
 
     return 0;
 }
