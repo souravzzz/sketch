@@ -16,15 +16,13 @@ sketch::sketch(int r, int c)
     row = r>1 ? r : ROW; 
     col = c>1 ? c : COL; 
 
-    matrix = new int* [row];
-    for(int i=0; i<row; i++)
-        matrix[i] = new int[col];
-
     A = new int[row];
     B = new int[row];
+    matrix = new int* [row];
 
     for (int i = 0; i < row; ++i)
     {
+        matrix[i] = new int[col];
         for (int j = 0; j < col; ++j)
         {
             matrix[i][j] = 0;

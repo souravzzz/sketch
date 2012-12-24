@@ -98,7 +98,7 @@ int main(int argc, char const *argv[])
     std::cout << "12345   " <<std::setw(8) << mult      << std::setw(8) << s.frequency(12345)   << std::endl;
     std::cout << "23456   " <<std::setw(8) << mult      << std::setw(8) << s.frequency(23456)   << std::endl;
     std::cout << "34567   " <<std::setw(8) << mult      << std::setw(8) << s.frequency(34567)   << std::endl;
-    std::cout << "RANDOM  " <<std::setw(8) << d <<std::endl<<std::endl;
+    std::cout << "RANDOM  " <<std::setw(8) << d         << std::endl                            << std::endl;
 
     return 0;
 }
