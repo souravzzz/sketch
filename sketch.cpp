@@ -1,8 +1,6 @@
 #include "sketch.h"
 #include <iostream>
 #include <iomanip>
-#include <vector>
-#include <cstdlib>
 
 #define ROW 7
 #define COL 2000
@@ -10,8 +8,6 @@
 #define LARGE 2147483647
 #define MOD 2147483647
 #define HL 31
-
-using namespace std;
 
 sketch::sketch(int r, int c) 
 {
@@ -128,12 +124,12 @@ void sketch::print()
 {
     for (int i = 0; i < row; ++i)
     {
-        cout << "|";
+        std::cout << "|";
         for (int j = 0; j < col; ++j)
         {
-            cout << setw(4) << matrix[i][j] << " | ";
+            std::cout << std::setw(4) << matrix[i][j] << " | ";
         }
-        cout << endl;
+        std::cout << std::endl;
     }
 }
 
